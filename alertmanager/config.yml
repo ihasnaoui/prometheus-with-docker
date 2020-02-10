@@ -1,0 +1,14 @@
+global:
+  smtp_smarthost: 'localhost:25'
+  smtp_from: 'fordevops2020@gmail.com'
+
+route:
+  receiver: 'team-mails'
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+
+receivers:
+- name: 'team-mails'
+  email_configs:
+  - to: 'fordevops2020@gmail.com'
